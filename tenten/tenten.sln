@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tenten.CSharp", "tenten.CSharp.csproj", "{FF2973B5-1451-DD97-EBAA-20C9892740FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tenten.CSharp.Editor", "tenten.CSharp.Editor.csproj", "{364419B6-4A3B-C956-06D9-AEB014C4510A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{FF2973B5-1451-DD97-EBAA-20C9892740FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF2973B5-1451-DD97-EBAA-20C9892740FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF2973B5-1451-DD97-EBAA-20C9892740FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{364419B6-4A3B-C956-06D9-AEB014C4510A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{364419B6-4A3B-C956-06D9-AEB014C4510A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{364419B6-4A3B-C956-06D9-AEB014C4510A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{364419B6-4A3B-C956-06D9-AEB014C4510A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

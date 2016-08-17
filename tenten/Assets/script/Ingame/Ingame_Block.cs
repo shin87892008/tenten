@@ -13,23 +13,33 @@ public class Ingame_Block : MonoBehaviour,
     private int Block_Offset = 100;
     private Transform Base_Parent;
 
+    [SerializeField]
+    private Transform Base_Block;
+
+    [SerializeField]
+    private Transform Block_BG;
+
+    public Block_Type Block_Type;
     public List<Transform> Blocks = new List<Transform>();
     public Color Block_Color;
 
     Action<Ingame_Block> Drag_CallBack;
 
-    public void Init(Action<Ingame_Block> callback, Transform parent)
+    public void Init(Action<Ingame_Block> callback, Transform parent, Block_Type type = Block_Type.ADD)
     {
         this.transform.parent = parent;
         this.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
         this.transform.localPosition = Vector3.zero;
 
+        Blocks.AddRange(Base_Block.GetComponentsInChildren<Transform>());
+        Blocks.RemoveAt(0);
         for (int i = 0; i < Blocks.Count; ++i)
         {
             Blocks[i].GetComponent<Image>().color = Block_Color;
         }
         Drag_CallBack = callback;
         Base_Parent = parent;
+        Block_Type = type;
     }
 
     public void OnBeginDrag(PointerEventData eventdata)
@@ -47,11 +57,13 @@ public class Ingame_Block : MonoBehaviour,
     }
     public void OnEndDrag(PointerEventData eventdata)
     {
+        Block_BG.gameObject.SetActive(false);
         Drag_CallBack(this);
     }
 
     public void Reset_Position()
     {
+        Block_BG.gameObject.SetActive(true);
         this.transform.parent = Base_Parent;
         this.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
         this.transform.localPosition = Vector3.zero;

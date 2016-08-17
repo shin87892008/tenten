@@ -8,6 +8,7 @@ public class Static_Value
     {
         public static string ROOT_MANAGER_NAME = "Managers";
         public static string ASSET_BUNDLE_HOST = "ftp://seongha@119.197.57.131:8181/shingha/unity/unity_bundle";
+        public static string DATABASE_PATH = "URI=file:" + Application.dataPath + "/DB/TentenDB.s3db";
     }
 
     public class ints
@@ -38,4 +39,11 @@ public enum Bingo_Axis
     None,
     Horizontal,
     Vertical,
+}
+
+[Serializable]
+public enum Block_Type
+{
+    ADD,
+    DELETE,
 }

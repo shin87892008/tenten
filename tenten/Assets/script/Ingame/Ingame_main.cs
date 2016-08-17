@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Ingame_main : MonoBehaviour {
 
@@ -10,10 +11,13 @@ public class Ingame_main : MonoBehaviour {
     private Transform parent_tile;
     [SerializeField]
     private List<Transform> block_positions = new List<Transform>();
+    [SerializeField]
+    private Text Tex_Total_Score;
 
     private List<Ingame_tile> list_map = new List<Ingame_tile>();
 
     private int Regist_Count = 0;
+    private int Total_Score = 0;
 
     void Start()
     {
@@ -21,7 +25,8 @@ public class Ingame_main : MonoBehaviour {
 
         for(int i = 0; i < list_map.Count; ++i)
             list_map[i].index = i;
-
+        Tex_Total_Score.text = "0";
+        Total_Score = 0;
         Create_Block();
     }
 
@@ -29,9 +34,11 @@ public class Ingame_main : MonoBehaviour {
     {
         for(int i = 0; i < block_positions.Count; ++i)
         {
+            //Random.Range(1, 9)
             GameObject block =(GameObject)Instantiate(
-                Resources.Load(string.Format("prefab/block/item_block_{0}", Random.Range(1, 5))));
+                Resources.Load(string.Format("prefab/block/item_block_{0}", Random.Range(1, 9))));
 
+            block.SetActive(true);
             block.GetComponent<Ingame_Block>().Init(End_Drag, block_positions[i]);
         }
     }
@@ -40,14 +47,16 @@ public class Ingame_main : MonoBehaviour {
     {
         if (Check_Regist_Block(block))
         {
-            Remove_BingoLine(Regist_Block(block));
-
+            Total_Score += block.Blocks.Count;
+            Remove_BingoLine( Regist_Block(block));
             Regist_Count++;
             if( Regist_Count == block_positions.Count)
             {
                 Regist_Count = 0;
                 Create_Block();
             }
+
+            Tex_Total_Score.text = Total_Score.ToString();
         }
         else
             block.Reset_Position();
@@ -66,6 +75,8 @@ public class Ingame_main : MonoBehaviour {
                 for(int j = 0; j < 10; ++j)
                 {
                     list_map[pair.Value[i] + (offset * j)].Refresh();
+
+                    Total_Score++;
                 }
             }
         }
@@ -83,8 +94,11 @@ public class Ingame_main : MonoBehaviour {
 
             int tile_index = ray_obj[0].collider.gameObject.GetComponent<Ingame_tile>().index;
 
-            if (list_map[tile_index].inblock)
-                return false;
+            if (block.Block_Type == Block_Type.ADD)
+            {
+                if (list_map[tile_index].inblock)
+                    return false;
+            }
         }    
         return true;
     }
@@ -93,37 +107,38 @@ public class Ingame_main : MonoBehaviour {
     {
         Dictionary<Bingo_Axis, List<int>> Dic_Bingo = new Dictionary<Bingo_Axis, List<int>>();
 
-        int[] tile_indexs = new int[block.Blocks.Count];
 
         for (int i = 0; i < block.Blocks.Count; ++i)
         {
             Ray2D ray = new Ray2D(block.Blocks[i].position, Vector2.zero);
             RaycastHit2D[] ray_obj = Physics2D.RaycastAll(ray.origin, ray.direction);
 
-            tile_indexs[i] = ray_obj[0].collider.gameObject.GetComponent<Ingame_tile>().index;
+            int tileindex = ray_obj[0].collider.gameObject.GetComponent<Ingame_tile>().index;
 
-            list_map[tile_indexs[i]].inblock = true;
-            list_map[tile_indexs[i]].block.color = block.Block_Color;
-        }
-
-        DestroyImmediate(block.gameObject);
-
-        for (int i = 0; i < tile_indexs.Length; ++i)
-        {
-            List<Bingo> bingo = Check_bingo(tile_indexs[i]);
-
-            for(int j = 0; j < bingo.Count; ++j)
+            if (block.Block_Type == Block_Type.ADD)
             {
-                if(!Dic_Bingo.ContainsKey(bingo[j].Axis))
-                    Dic_Bingo.Add(bingo[j].Axis, new List<int>());
+                list_map[tileindex].Add_Block(block);
 
-                if(!Dic_Bingo[bingo[j].Axis].Contains(bingo[j].index))
+                List<Bingo> bingo = Check_bingo(tileindex);
+
+                for (int j = 0; j < bingo.Count; ++j)
                 {
-                    Dic_Bingo[bingo[j].Axis].Add(bingo[j].index);
+                    if (!Dic_Bingo.ContainsKey(bingo[j].Axis))
+                        Dic_Bingo.Add(bingo[j].Axis, new List<int>());
+
+                    if (!Dic_Bingo[bingo[j].Axis].Contains(bingo[j].index))
+                    {
+                        Dic_Bingo[bingo[j].Axis].Add(bingo[j].index);
+                    }
                 }
             }
+            else
+            {
+                list_map[tileindex].Refresh();
+            }
         }
-        
+
+        DestroyImmediate(block.gameObject);        
         return Dic_Bingo;
     }
 

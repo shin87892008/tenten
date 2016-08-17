@@ -7,7 +7,8 @@ public class Ingame_tile : MonoBehaviour {
 
     [SerializeField]
     private Color Block_Color;
-    public Image block;
+    [SerializeField]
+    private Image block;
 
     public int index = 0;
     public bool inblock;
@@ -16,5 +17,11 @@ public class Ingame_tile : MonoBehaviour {
     {
         block.color = Block_Color;
         inblock = false;
+    }
+
+    public void Add_Block(Ingame_Block block)
+    {
+        this.block.color = block.Block_Color;
+        inblock = true;
     }
 }
