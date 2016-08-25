@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Google Play game services IDs.
+Save this file as res/values/games-ids.xml in your project.
+-->
+<resources>
+  <string name="app_id">644051262769</string>
+  <string name="package_name">com.ftt.lastgoddess.kr.aos</string>
+  <string name="achievement_goddess_1">CgkIsbrJo98SEAIQAQ</string>
+  <string name="achievement_goddess_2">CgkIsbrJo98SEAIQAg</string>
+  <string name="achievement_goddess_3">CgkIsbrJo98SEAIQAw</string>
+  <string name="achievement_goddess_4">CgkIsbrJo98SEAIQBA</string>
+  <string name="achievement_goddess_5">CgkIsbrJo98SEAIQBQ</string>
+  <string name="leaderboard_dsf">CgkIsbrJo98SEAIQBg</string>
+</resources>

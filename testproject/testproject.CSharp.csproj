@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{78D9E7E9-85D9-CA23-6353-F2C14D663993}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>Android:13</UnityBuildTarget>
+    <UnityVersion>5.3.6f1</UnityVersion>
+    <RootNamespace></RootNamespace>
+    <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_6;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_6;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="testproject.CSharp.Plugins.csproj">
+      <Project>{743E092C-3BFA-59A3-23A4-5A89515E7C16}</Project>
+      <Name>testproject.CSharp.Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Extensions\AndroidManifestManager\AN_ManifestManager.cs" />
+    <Compile Include="Assets\Extensions\AndroidManifestManager\Core\AMMSettings.cs" />
+    <Compile Include="Assets\Extensions\AndroidManifestManager\Models\AN_ActivityTemplate.cs" />
+    <Compile Include="Assets\Extensions\AndroidManifestManager\Models\AN_ApplicationTemplate.cs" />
+    <Compile Include="Assets\Extensions\AndroidManifestManager\Models\AN_BaseTemplate.cs" />
+    <Compile Include="Assets\Extensions\AndroidManifestManager\Models\AN_ManifestPermission.cs" />
+    <Compile Include="Assets\Extensions\AndroidManifestManager\Models\AN_ManifestTemplate.cs" />
+    <Compile Include="Assets\Extensions\AndroidManifestManager\Models\AN_PropertyTemplate.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Ad\AndroidAdMob.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Billing\Clients\AN_InApp_AndroidClient.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Billing\Clients\AN_InApp_EditorClient.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Billing\Enum\AN_InAppType.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Billing\Interfaces\AN_InAppClient.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Billing\Manage\AndroidInAppPurchaseManager.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Billing\Models\AndroidInventory.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Billing\Models\BillingResult.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Billing\Tasks\InitAndroidInventoryTask.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Billing\Templates\GoogleProductTemplate.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Billing\Templates\GooglePurchaseTemplate.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Enum\AN_Bool.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Enum\AndroidDialogResult.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Enum\BillingResponseCodes.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Enum\GooglePurchaseState.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Models\Reults\AN_AccessTokenResult.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Models\Reults\AN_DeviceCodeResult.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Models\Reults\AN_PackageCheckResult.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Models\Reults\AN_RefreshTokenResult.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Models\Reults\AN_Result.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Models\Reults\GP_AdvertisingIdLoadResult.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Analytics\AndroidGoogleAnalytics.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\AppLicensing\AN_LicenseErrorCode.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\AppLicensing\AN_LicenseManager.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\AppLicensing\AN_LicenseRequestResult.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\AppLicensing\AN_LicenseStatusCode.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Enums\AN_CameraCaptureType.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Enums\AN_ExternalStorageType.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Enums\AN_PermissionState.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Enums\AN_PushNotificationService.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Enums\AN_SettingsActivityAction.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Features\AddressBookController.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Features\AndroidAppInfoLoader.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Features\AndroidCamera.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Features\AndroidCameraImageFormat.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Features\AndroidNativeUtility.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Features\AndroidSocialGate.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Features\ImmersiveMode.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Features\PermissionsManager.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Features\TVAppController.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Models\AN_Locale.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Models\AN_NetworkInfo.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Models\AndroidApp.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Models\PackageAppInfo.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Notifications\AndroidNotificationBuilder.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Notifications\AndroidNotificationManager.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Notifications\AndroidToast.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Notifications\ParsePushesStub.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Notifications\Template\LocalNotificationTemplate.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Results\AN_GrantPermissionsResult.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Results\GallerySaveResult.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Soomla\AN_SoomlaEventType.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Soomla\AN_SoomlaGrow.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Soomla\AN_SoomlaProxy.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Soomla\AN_SoomlaSocialProvider.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Templates\AndroidABAddress.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Templates\AndroidABChat.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Templates\AndroidABEmail.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Templates\AndroidABOrganization.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Templates\AndroidContactInfo.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Templates\AndroidImagePickResult.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Other\Templates\AndroidImagesPickResult.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Manage\GP_AppInvitesController.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Manage\GoogleCloudMessageService.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Manage\GooglePlayConnection.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Manage\GooglePlayEvents.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Manage\GooglePlayInvitationManager.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Manage\GooglePlayManager.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Manage\GooglePlayQuests.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Manage\GooglePlayRTM.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Manage\GooglePlaySavedGamesManager.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Manage\GooglePlayTBM.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Manage\GooglePlusAPI.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Models\AppInvites\GP_AppInvite.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Models\AppInvites\GP_AppInviteBuilder.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\PlusAPI\PlusButton\Enums\AN_PlusBtnAnnotation.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\PlusAPI\PlusButton\Enums\AN_PlusBtnSize.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\PlusAPI\PlusButton\Models\AN_PlusButton.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\PlusAPI\PlusButton\Models\AN_PlusButtonsManager.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\PlusAPI\PlusShare\AN_DeepLinkingManager.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\PlusAPI\PlusShare\AN_PlusShareBuilder.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\PlusAPI\PlusShare\AN_PlusShareListener.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\PlusAPI\PlusShare\AN_PlusShareResult.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Results\GP_RetrieveAppInviteResult.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Results\GP_SendAppInvitesResult.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PlayService\Utils\GooglePlayUtils.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PopUps\AndroidDialog.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PopUps\AndroidDialogTheme.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PopUps\AndroidMessage.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PopUps\AndroidRateUsPopUp.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\PopUps\Base\BaseAndroidPopup.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Settings\AN_APIManager.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\Settings\AN_API_NAME.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\AdMob\AndroidAdMobBanner.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\AdMob\AndroidAdMobBannerInterstitial.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\AdMob\AndroidGoogleAdsExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\AdMob\AndroidGoogleAdsExample_old.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Base\AndroidNativeExampleBase.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Billing\BillingExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Billing\GPaymnetManagerExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Billing\GameBillingManagerExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Billing\GameDataExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Billing\GamePlayExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\DataTemplates\CustomLeaderboardFiledsHolder.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\DataTemplates\CustomPlayerUIRow.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\JS\CSharpAPIHelper.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Networking\RTM_Game_Example.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Networking\TBM_Game_Example.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Others\ANNativeEventsExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Others\AddressBookExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Others\AnOtherFeaturesPreview.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Others\AnalyticsUseExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Others\AndroidPopUpExamples.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Others\NotificationsExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Others\PermissionsAPIExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Others\PlusButtonsAPIExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Others\PreviewSceneController.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\PlayService\PlayServicFridnsLoadExample_New.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\PlayService\PlayServiceCustomLBExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\PlayService\PlayServiceExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\PlayService\QuestAndEventsExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\PlayService\SavedGamesExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Social\AndroidSocialNativeExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Social\FacebookAnalyticsExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Social\FacebookAndroidTurnBasedAndGiftsExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Social\FacebookAndroidUseExample.cs" />
+    <Compile Include="Assets\Extensions\AndroidNative\xExample\Scripts\Social\TwitterAndroidUseExample.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Ad\AndroidAdMobController.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\AN_GoogleAdProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\AN_PoupsProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\AN_ProxyPool.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_AppInvitesProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_BillingProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_FBProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_GMSGeneralProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_GMSGiftsProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_GMSInvitationProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_GMSQuestsEventsProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_GMSRTMProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_GoogleAnalyticsProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_GooglePlayUtilsProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_ImmersiveModeProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_LicenseManagerProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_NotificationProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_PlusButtonProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_SocialSharingProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\APIBridge\AN_TVControllerProxy.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\AndroidNative.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\AndroidNativeSettings.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Core\SocialPlatfromSettings.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\AndroidBase\AdroidActivityResultCodes.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\AndroidBase\AndroidGravity.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\AndroidBase\AndroidLogLevel.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\AndroidBase\AndroidMonth.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\GoogleBase\GoogleGender.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\GoogleBase\GoogleGravity.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\GoogleMobileAd\GADBannerSize.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\GoogleMobileAd\GADInAppResolution.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GPAchievementState.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GPAchievementType.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GPBoardTimeSpan.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GPCollectionType.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GPConnectionState.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GPGameRequestType.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GPLogLevel.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_AppStateStatusCodes.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_ConnectionResultCode.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_GamesActivityResultCodes.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_GamesStatusCodes.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_InvitationType.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_MatchesSortOrder.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_PlayServicesStatus.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_RTM_MessageType.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_RTM_PackageType.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_RTM_ParticipantStatus.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\GP_RTM_RoomStatus.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\Quests\GP_QuestSortOrder.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\Quests\GP_QuestState.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\Quests\GP_QuestsSelect.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\TBM\GP_TBM_MatchStatus.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\TBM\GP_TBM_MatchTurnStatus.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\TBM\GP_TBM_MatchesSortOrder.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Enum\PlayService\TBM\GP_TBM_ParticipantResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Events\FacebookEvents.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Events\GoogleMobileAdEvents.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Events\TwitterEvents.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Interfaces\GoogleMobileAdBanner.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Interfaces\GoogleMobileAdInterface.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Interfaces\TwitterManagerInterface.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\AndroidADBanner.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\AndroidActivityResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\AndroidGameActivityResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\AsyncTask.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GADBannerIdFactory.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GPAchievement.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GPGameRequest.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GPLeaderBoard.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GPScoreCollection.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_Invite.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_LocalPlayerScoreUpdateListener.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_Participant.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_ParticipantResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_RTM_NETWORK_PACKAGE.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_RTM_ReliableMessageDeliveredResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_RTM_ReliableMessageListener.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_RTM_ReliableMessageSentResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_RTM_Result.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GP_RTM_Room.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GooglePlayConnectionResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GooglePlayGiftRequestResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\GooglePlayResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Quests\GP_Event.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Quests\GP_Quest.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\GP_AchievementResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\GP_GCM_RegistrationResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\GP_LeaderboardResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\GP_QuestResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\GP_ScoreResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\GP_SnapshotConflict.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\GP_SpanshotLoadResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\Invitations\AN_InvitationInboxCloseResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\SavedGames\GP_DeleteSnapshotResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_CancelMatchResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_LeaveMatchResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_LoadMatchResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_LoadMatchesResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_MatchInitiatedResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_MatchReceivedResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_MatchRemovedResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\Results\TBM\GP_TBM_UpdateMatchResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\SavedGames\GP_Snapshot.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\SavedGames\GP_SnapshotMeta.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Models\TBM\GP_TBM_Match.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\PUtil\ANMiniJSON.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\PUtil\PlayServiceUtil.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Enum\FB_AppRequestState.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Enum\FB_Gender.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Enum\FB_HttpMethod.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Enum\FB_PermissionStatus.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Enum\FB_RequestActionType.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Interfaces\SP_FB_API.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Manage\SPFacebook.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Manage\SPFacebookAnalytics.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Manage\SP_FB_API_v6.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Manage\SP_FB_API_v7.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Models\FB_AppRequest.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Models\FB_AppRequestResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Models\FB_LikeInfo.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Models\FB_Object.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Models\FB_Permission.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Models\FB_PermissionResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Models\FB_ProfileImageSize.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Models\FB_Score.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Models\FB_UserInfo.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Results\FB_LoginResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Results\FB_PostResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Results\FB_Result.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Tasks\FB_GrapRequest_V6.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Tasks\FB_GrapRequest_V7.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Tasks\FB_LikesRetrieveTask.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Facebook\Tasks\FB_PostingTask.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Instagram\Enum\InstagramEvents.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Instagram\Enum\InstagramPostResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Instagram\Manage\AndroidInstagramManager.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Manage\AndroidTwitterManager.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Manage\TwitterApplicationOnlyToken.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Manage\TwitterDataCash.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Models\TWResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Models\TW_APIRequstResult.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Models\TweetTemplate.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Models\TwitterStatus.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Models\TwitterUserInfo.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Tasks\TWAPITest.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Tasks\TW_APIRequest.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Tasks\TW_FollowersIdsRequest.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Tasks\TW_FriendsIdsRequest.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Tasks\TW_OAuthAPIRequest.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Tasks\TW_SearchTweetsRequest.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Tasks\TW_UserTimeLineRequest.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Tasks\TW_UsersLookUpRequest.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Social\Twitter\Tasks\TwitterPostingTask.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Templates\GPScore.cs" />
+    <Compile Include="Assets\Extensions\GooglePlayCommon\Templates\GooglePlayerTemplate.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Data\SA_Converter.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Data\SA_MiniJSON.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\Advertisement\SA_Ad_EditorUIController.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\Advertisement\SA_EditorAd.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\InAppPurchaces\SA_EditorInApps.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\InAppPurchaces\SA_InApps_EditorUIController.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\Notifications\SA_EditorNotificationType.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\Notifications\SA_EditorNotifications.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\Notifications\SA_Notifications_EditorUIController.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\Utilities\SA_EditorTesting.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\Utilities\SA_UIHightDependence.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\Utilities\SA_UIWidthDependence.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\EditorTesting\xTextScene\SA_EditorTestingSceneController.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Effetcs\Animations\Tween\Enums\SA_EaseType.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Effetcs\Animations\Tween\Methods\SA_ValuesTween.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Effetcs\Animations\Tween\Pixelplacement\iTween\SA_iTween.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Models\SA_Invoker.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Models\SA_PrefabAsyncLoader.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Models\SA_ScreenshotMaker.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Models\SA_WWWTextureLoader.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Modules\SA_Config.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Utilities\Extensions\SA_GameObjectExtensions.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Utilities\Extensions\SA_GeneralUtility.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Utilities\Extensions\SA_TextureExtensions.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Utilities\Modules\SA_Files.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Utilities\Modules\SA_IdFactory.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Utilities\Modules\SA_Loader.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Utilities\Modules\SA_Screen.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Utilities\Patterns\SA_NonMonoSingleton.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsCommon\Utilities\Patterns\SA_Singleton.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\SA_UI_Scripts\DefaultPreviewButton.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\SA_UI_Scripts\SALevelLoader.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\SA_UI_Scripts\SALoadedSceneOnClick.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\SA_UI_Scripts\SAOnClickAction.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\SA_UI_Scripts\SAOpenUrlOnClick.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\SA_UI_Scripts\SASendMessageOnClick.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\SA_UI_Scripts\SA_BackButton.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\SA_UI_Scripts\SA_FriendUI.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\SA_UI_Scripts\SA_Label.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\SA_UI_Scripts\SA_PartisipantUI.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\SA_UI_Scripts\SA_StatusBar.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\SA_UI_Scripts\SA_Texture.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\ScreenPlacementExtension\PreviewScreenUtil.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\ScreenPlacementExtension\ScreenPlacement.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\ScreenPlacementExtension\ScreenPlacementExtension.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\ScreenPlacementExtension\ScreenScaler.cs" />
+    <Compile Include="Assets\Extensions\StansAssetsPreviewUI\Scripts\ScreenPlacementExtension\XScaleModifayer.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\ConsoleBase.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\LogView.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\MenuBase.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AccessTokenMenu.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppEvents.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppInvites.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppLinks.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppRequests.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\DialogShare.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\GameGroups.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\GraphRequest.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\MainMenu.cs" />
+    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\Pay.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\AccessToken.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\AppEventName.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\AppEventParameterName.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\CallbackManager.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Canvas\CanvasFacebook.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Canvas\CanvasFacebookGameObject.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Canvas\CanvasFacebookLoader.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Canvas\CanvasJSWrapper.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Canvas\ICanvasFacebook.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Canvas\ICanvasFacebookCallbackHandler.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Canvas\ICanvasFacebookImplementation.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Canvas\ICanvasFacebookResultHandler.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Canvas\ICanvasJSWrapper.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Canvas\JsBridge.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\ComponentFactory.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Constants.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\FB.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\FacebookBase.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\FacebookGameObject.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\FacebookSdkVersion.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\FacebookSettings.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\FacebookUnityPlatform.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\IFacebook.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\IFacebookCallbackHandler.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\IFacebookImplementation.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\IFacebookResultHandler.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\IPayFacebook.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\MethodArguments.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\MethodCall.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\Android\AndroidFacebook.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\Android\AndroidFacebookGameObject.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\Android\AndroidFacebookLoader.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\Android\FBJavaClass.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\Android\IAndroidJavaClass.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\IMobileFacebook.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\IMobileFacebookCallbackHandler.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\IMobileFacebookImplementation.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\IMobileFacebookResultHandler.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\IOS\IIOSWrapper.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\IOS\IOSFacebook.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\IOS\IOSFacebookGameObject.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\IOS\IOSFacebookLoader.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\IOS\IOSWrapper.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\MobileFacebook.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Mobile\MobileFacebookGameObject.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\NativeDialogModes.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\OGActionType.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\PlatformEditor\EditorFacebook.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\PlatformEditor\EditorFacebookGameObject.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\PlatformEditor\EditorFacebookLoader.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\PlatformEditor\EditorFacebookMockDialog.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\PlatformEditor\EditorWrapper.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\PlatformEditor\IEditorWrapper.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\PlatformEditor\MockDialogs\EmptyMockDialog.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\PlatformEditor\MockDialogs\MockLoginDialog.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\PlatformEditor\MockDialogs\MockShareDialog.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Properties\AssemblyInfo.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\AccessTokenRefreshResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\AppInviteResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\AppLinkResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\AppReqeustResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\GraphResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\GroupCreateResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\GroupJoinResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\IAccessTokenRefreshResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\IAppInviteResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\IAppLinkResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\IAppRequestResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\IGraphResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\IGroupCreateResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\IGroupJoinResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\IInternalResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\ILoginResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\IPayResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\IResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\IShareResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\LoginResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\PayResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\ResultBase.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\ResultContainer.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Results\ShareResult.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Utils\AsyncRequestString.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Utils\FacebookLogger.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Utils\HttpMethod.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Utils\IFacebookLogger.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Utils\MiniJson.cs" />
+    <Compile Include="Assets\FacebookSDK\SDK\Scripts\Utils\Utilities.cs" />
+    <Compile Include="Assets\Script\Awake.cs" />
+    <Compile Include="Assets\Script\Module\Singleton.cs" />
+    <Compile Include="Assets\Script\Module\WebView.cs" />
+    <Compile Include="Assets\Script\Payment\Aos_Payment.cs" />
+    <Compile Include="Assets\Script\Payment\Base_Payment.cs" />
+    <Compile Include="Assets\Script\Payment\Ios_Payment.cs" />
+    <Compile Include="Assets\Script\Payment\Payment_Manager.cs" />
+    <Compile Include="Assets\Script\Platform\Base_Platform.cs" />
+    <Compile Include="Assets\Script\Platform\Platform_Facebook.cs" />
+    <Compile Include="Assets\Script\Platform\Platform_Google.cs" />
+    <Compile Include="Assets\Script\Platform\Platform_Manager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Extensions\AndroidManifestManager\default.xml" />
+    <None Include="Assets\Extensions\AndroidNative\Documentation\AN_VersionNotes.txt" />
+    <None Include="Assets\Extensions\AndroidNative\Documentation\ReadMe.txt" />
+    <None Include="Assets\FacebookSDK\SDK\Editor\android\DefaultAndroidManifest.xml" />
+    <None Include="Assets\FacebookSDK\SDK\Scripts\Canvas\Resources\JSSDKBindings.txt" />
+    <None Include="Assets\Plugins\Android\AN_Res\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\AN_Res\res\values\analytics.xml" />
+    <None Include="Assets\Plugins\Android\AN_Res\res\values\ids.xml" />
+    <None Include="Assets\Plugins\Android\AN_Res\res\values\version.xml" />
+    <None Include="Assets\Plugins\Android\AN_Res\res\xml\file_paths.xml" />
+    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\StansAssets\Android\AN_Res\res\values\analytics.xml" />
+    <None Include="Assets\Plugins\StansAssets\Android\AN_Res\res\values\ids.xml" />
+    <None Include="Assets\Plugins\StansAssets\Android\AN_Res\res\values\version.xml" />
+    <None Include="Assets\Plugins\StansAssets\Android\AN_Res\res\xml\file_paths.xml" />
+    <None Include="Assets\Plugins\StansAssets\Android\androidnative.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\androidnative.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\app_licensing\an_licensing_library.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\billing\an_billing.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\billing\an_billing.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\an_googleplay.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\an_googleplay.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-ads-lite.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-ads-lite.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-ads.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-ads.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-analytics-impl.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-analytics-impl.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-analytics.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-analytics.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-appinvite.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-appinvite.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-auth-base.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-auth-base.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-auth.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-auth.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-base.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-base.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-basement.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-basement.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-drive.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-drive.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-games.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-games.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-gcm.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-gcm.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-iid.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-iid.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-plus.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\google_play\play-services-plus.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\libs\an_sa_soomla.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\libs\android-support-v4.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\libs\image-chooser-library-1.6.0.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\libs\support-v4-23.4.0.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\social\an_social.jar.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\social\an_social.txt" />
+    <None Include="Assets\Plugins\StansAssets\Android\social\twitter4j-core-4.0.4.txt" />
+    <None Include="Assets\Plugins\StansAssets\Versions\AN_VersionInfo.txt" />
+    <None Include="Assets\Plugins\StansAssets\Versions\MSP_VersionInfo.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
+</Project>
