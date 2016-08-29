@@ -6,6 +6,10 @@ public class Platform_Google : Base_Platform
 {
     public override void Init()
     {
+        //GCM Init
+        GoogleCloudMessageService.ActionCouldMessageLoaded += OnMessageLoaded;
+        GoogleCloudMessageService.ActionCMDRegistrationResult += HandleActionCMDRegistrationResult;
+        GoogleCloudMessageService.Instance.Init();
         is_Init = true;
     }
     public override void SignIn(Action<bool, Platform_Data> p_SignIn)
@@ -56,4 +60,39 @@ public class Platform_Google : Base_Platform
     {
         base.SignOut(p_SignOut);
     }
+
+
+
+    //+ GCM--------------
+    private void HandleActionCMDRegistrationResult(GP_GCM_RegistrationResult res)
+    {
+        if (res.IsSucceeded)
+        {
+            Debug.Log("GCM REG ID: " + GoogleCloudMessageService.instance.registrationId);
+        }
+        else
+        {
+            Debug.LogError("GCM Registration failed :(");
+        }
+    }
+
+    public override void Get_Push_Message(Action<string> p_push_callback)
+    {
+        base.Get_Push_Message(p_push_callback);
+
+        if (string.IsNullOrEmpty(GoogleCloudMessageService.instance.registrationId))
+        {
+            GoogleCloudMessageService.instance.RgisterDevice();
+            return;
+        }
+
+        GoogleCloudMessageService.instance.LoadLastMessage();
+    }
+
+    private void OnMessageLoaded(string lastMessage)
+    {
+        Debug.Log("Last GCM Message: " + GoogleCloudMessageService.instance.lastMessage);
+        CB_Push(GoogleCloudMessageService.instance.lastMessage);
+    }
 }
+

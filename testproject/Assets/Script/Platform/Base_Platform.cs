@@ -21,4 +21,11 @@ public abstract class Base_Platform : MonoBehaviour {
         CB_SignOut = p_SignOut;
     }
     protected Action<bool> CB_SignOut;
+
+
+    protected Action<string> CB_Push;
+    public virtual void Get_Push_Message(Action<string> p_push_callback)
+    {
+        CB_Push = p_push_callback;
+    }
 }

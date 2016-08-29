@@ -62,23 +62,50 @@ public class NotificationsExample : MonoBehaviour {
 	}
 
 
+
+
+
+
+
+
+
+
+
+
+
 	private void Reg() {
 		GoogleCloudMessageService.instance.RgisterDevice();
-	}
+    }
+    private void HandleActionCMDRegistrationResult(GP_GCM_RegistrationResult res)
+    {
+        if (res.IsSucceeded)
+        {
+            AN_PoupsProxy.showMessage("Regstred", "GCM REG ID: " + GoogleCloudMessageService.instance.registrationId);
+            Debug.LogError("GCM REG ID: " + GoogleCloudMessageService.instance.registrationId);
+        }
+        else
+        {
+            AN_PoupsProxy.showMessage("Reg Failed", "GCM Registration failed :(");
+        }
+    }
 
-	private void LoadLastMessage() {
+    private void LoadLastMessage() {
 		GoogleCloudMessageService.instance.LoadLastMessage();
-	}
-	
-	//--------------------------------------
-	//  GET/SET
-	//--------------------------------------
-	
-	//--------------------------------------
-	//  EVENTS
-	//--------------------------------------
+    }
+    private void OnMessageLoaded(string msg)
+    {
+        AN_PoupsProxy.showMessage("Message Loaded", "Last GCM Message: " + GoogleCloudMessageService.instance.lastMessage);
+    }
 
-	private void HandleActionGCMPushReceived (string message, Dictionary<string, object> data)
+    //--------------------------------------
+    //  GET/SET
+    //--------------------------------------
+
+    //--------------------------------------
+    //  EVENTS
+    //--------------------------------------
+
+    private void HandleActionGCMPushReceived (string message, Dictionary<string, object> data)
 	{
 		Debug.Log("[HandleActionGCMPushReceived]");
 		Debug.Log("Message: " + message);
@@ -99,22 +126,12 @@ public class NotificationsExample : MonoBehaviour {
 
 		AN_PoupsProxy.showMessage (message, ANMiniJSON.Json.Serialize(data));
 	}
-
-	private void HandleActionCMDRegistrationResult (GP_GCM_RegistrationResult res) {
-		if(res.IsSucceeded) {
-			AN_PoupsProxy.showMessage ("Regstred", "GCM REG ID: " + GoogleCloudMessageService.instance.registrationId);
-		} else {
-			AN_PoupsProxy.showMessage ("Reg Failed", "GCM Registration failed :(");
-		}
-	}
+    
 		
 	private void OnNotificationIdLoaded (int notificationid){
 		AN_PoupsProxy.showMessage ("Loaded", "App was laucnhed with notification id: " + notificationid);
 	}
 	
-	private void OnMessageLoaded(string msg) {
-		AN_PoupsProxy.showMessage ("Message Loaded", "Last GCM Message: " + GoogleCloudMessageService.instance.lastMessage);
-	}
 	
 	//--------------------------------------
 	//  DESTROY

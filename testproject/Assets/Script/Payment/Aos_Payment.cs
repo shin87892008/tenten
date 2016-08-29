@@ -5,8 +5,6 @@ using System;
 
 public class Aos_Payment : Payment_Base
 {
-    private string Base64EncodePublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4YHk9q1ykQOo1snom24vXUXiHXtfifreP5RmQjFd4f9vr0q9tCU8V7RCD3ZIys1YGqX/jzFsPEJqXHBSo8IslCC5pa4VANLBmeeKaiw+5XhCChVw9AT3ksZ9/Wj26+bNiGoaPcEQGr+Nx/o5eDMhVMet6qdmHH59ngCZeUAkXMqDO3/gN0DSq/CJdEMSgduP9lYGbd8oyV1EP6VOPtmK3tlCm7Of7GLZNcgMy010xHL3hhq80GqhEi3WQau6cpnoeEbDLaPirbxcNnV5wjJAAz+WxVItBNoI3P8ReA3DihwUhPrYnMFyTybyU/hoScTlIZMJRD12hSbfFyRilA6UyQIDAQAB";
-
     public override void Init(List<string> p_product)
     {
         for(int i = 0; i < p_product.Count; ++i)
@@ -14,12 +12,12 @@ public class Aos_Payment : Payment_Base
             AndroidInAppPurchaseManager.Client.AddProduct(p_product[i]);
         }
 
-        AndroidNativeSettings.Instance.base64EncodedPublicKey = Base64EncodePublicKey;
+        AndroidNativeSettings.Instance.base64EncodedPublicKey = ConstValue.String.Payment_Key;
         AndroidInAppPurchaseManager.ActionProductPurchased += OnProductPurchased;
         AndroidInAppPurchaseManager.ActionProductConsumed += OnProductConsumed;
 
         AndroidInAppPurchaseManager.ActionBillingSetupFinished += OnBillingConnected;
-        AndroidInAppPurchaseManager.Client.Connect(Base64EncodePublicKey);
+        AndroidInAppPurchaseManager.Client.Connect(ConstValue.String.Payment_Key);
     }
 
     private void OnBillingConnected(BillingResult result)
@@ -44,8 +42,8 @@ public class Aos_Payment : Payment_Base
     public override void Get_Product_List(Action<List<Product_Data>> p_callback)
     {
         base.Get_Product_List(p_callback);
-        AndroidInAppPurchaseManager.Client.RetrieveProducDetails();
         AndroidInAppPurchaseManager.ActionRetrieveProducsFinished += OnRetrieveProductsFinised;
+        AndroidInAppPurchaseManager.Client.RetrieveProducDetails();
     }
 
     private void OnRetrieveProductsFinised(BillingResult result)
@@ -76,8 +74,8 @@ public class Aos_Payment : Payment_Base
     public override void Get_Purchase_List(Action<List<Purchase_Data>> p_callback)
     {
         base.Get_Purchase_List(p_callback);
-        AndroidInAppPurchaseManager.Client.RetrieveProducDetails();
         AndroidInAppPurchaseManager.ActionRetrieveProducsFinished += OnRetrieveProductsFinised;
+        AndroidInAppPurchaseManager.Client.RetrieveProducDetails();
     }
 
     private void OnRetrievePurchaseFinised(BillingResult result)

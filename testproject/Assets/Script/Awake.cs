@@ -51,8 +51,8 @@ public class Awake : MonoBehaviour {
     {
         Init_Action_List.Add(InitStep_Get_ServerInfo);
         Init_Action_List.Add(InitStep_AssetBundle);
-        Init_Action_List.Add(InitStep_Inapp);
-        //Init_Action_List.Add(InitStep_SignIn_Check);
+        //Init_Action_List.Add(InitStep_Inapp);
+        Init_Action_List.Add(InitStep_SignIn_Check);
         StartCoroutine(InitStep());
     }
 
@@ -221,5 +221,20 @@ public class Awake : MonoBehaviour {
     public void CB_Consume()
     {
 
+    }
+    
+
+    public void GCM_Get_LastMassage()
+    {
+#if UNITY_ANDROID
+        Platform_Manager.Instance.Get_Push_Message(Platform_Type.AOS_GOOGLEPLUS, CB_GCM_Message);
+#elif UNITY_IOS
+        Platform_Manager.Instance.Get_Push_Message(Platform_Type.IOS_GAMECENTER, CB_GCM_Message);
+#else
+#endif
+    }
+    public void CB_GCM_Message(string p_message)
+    {
+        Debug.LogError(p_message);
     }
 }
