@@ -16,151 +16,45 @@ public class Platform_Data
         return "Platform_type : " + Platform_type.ToString() + "\nUser_Id : " + User_Id + "\nUser_Name : " + User_Name;
 
     }
-}
-
-public enum Platform_Type
-{
-    NONE,
-    KAKAO = 1,
-    NAVER_LINE = 2,
-    NAVER_BAND = 3,
-    FACEBOOK = 4,
-    GUEST = 5,
-    IOS_GAMECENTER = 6,
-    AOS_GOOGLEPLUS = 7,
-    NOT_PLATFROM = 99,
-}
-public class Awake : MonoBehaviour {
-
-    public enum AWAKE_STEP
+    public Platform_Data()
     {
-        SERVER,
-        ASSETBUNDLE,
-        LOGIN_CHECK,
-        PLATFROM,
-        LENGTH,
-    }
 
+    }
+    public Platform_Data(Platform_Type p_type, string p_id)
+    {
+        Platform_type = p_type;
+        User_Id = p_id;
+    }
+}
+
+public class Awake : MonoBehaviour {
+    
     public GameObject i_Agree_Obj;
     public GameObject i_Select_Platform_Obj;
 
-    private List<Action> Init_Action_List = new List<Action>();
+    private List<Awake_Base> Awake_Work_List = new List<Awake_Base>();
     private bool is_Complete;
 
     void Start()
     {
-        Init_Action_List.Add(InitStep_Get_ServerInfo);
-        Init_Action_List.Add(InitStep_AssetBundle);
-        //Init_Action_List.Add(InitStep_Inapp);
-        Init_Action_List.Add(InitStep_SignIn_Check);
+        Awake_Work_List.Add(this.GetComponent<Awake_ServerInfo>());
+        Awake_Work_List.Add(this.GetComponent<Awake_AssetBundle>());
+        Awake_Work_List.Add(this.GetComponent<Awake_Platform>());
         StartCoroutine(InitStep());
     }
 
     private IEnumerator InitStep()
     {
-        for (int i = 0; i < Init_Action_List.Count; ++i)
+        for (int i = 0; i < Awake_Work_List.Count; ++i)
         {
-            is_Complete = false;
+            Awake_Work_List[i].Init();
+            Awake_Work_List[i].Proccess_Start();
 
-            Init_Action_List[i]();
-
-            while (is_Complete == false)
+            while (false == Awake_Work_List[i].is_finish)
                 yield return null;
         }
         yield break;
     }
-    void Finish_Step()
-    {
-        is_Complete = true;
-    }
-    void InitStep_Get_ServerInfo()
-    {
-        Debug.Log("Main : InitStep_Get_ServerInfo");
-        Did_InitStep0_Get_ServerInfo();
-        //JWWW.Request_ServerInfo(Did_InitStep0_Get_ServerInfo);
-    }
-    void Did_InitStep0_Get_ServerInfo()
-    {
-        Finish_Step();
-    }
-    void InitStep_AssetBundle()
-    {
-        Debug.Log("Main :AssetBundle");
-        Finish_Step();
-    }
-
-    void InitStep_SignIn_Check()
-    {
-        Platform_Manager.Instance.Platform_Init();
-        Debug.Log("Platfrom Login");
-        Platform_Type platform_type = (Platform_Type)PlayerPrefs.GetInt("Platform_Type", 0);
-
-        //로그인 기록이 없다, 최초 실행
-        if (platform_type == Platform_Type.NONE)
-        {
-#if UNITY_EDITOR
-            platform_type = Platform_Type.FACEBOOK;
-#elif UNITY_ANDROID
-            platform_type = Platform_Type.AOS_GOOGLEPLUS;
-#elif UNITY_IOS
-            platform_type = Platform_Type.IOS_GAMECENTER;
-#else
-            platform_type = Platform_Type.FACEBOOK;
-#endif
-
-            if (Application.systemLanguage == SystemLanguage.Korean)
-            {
-                //약관동의 팝업작업
-                i_Agree_Obj.SetActive(true);
-                i_Agree_Obj.GetComponent<WebView>().Open_WebView("http://www.naver.com");
-                return;
-            }
-        }
-        Platform_Manager.Instance.Platform_SignIn(platform_type, CB_SignIn);
-    }
-    public void Platform_Agree(int p_index)
-    {
-        i_Agree_Obj.GetComponent<WebView>().Close_WebView();
-        i_Agree_Obj.SetActive(false);
-        if (p_index == 0)
-        {
-#if UNITY_EDITOR
-            Platform_Manager.Instance.Platform_SignIn(Platform_Type.FACEBOOK, CB_SignIn);
-#elif UNITY_ANDROID
-            Platform_Manager.Instance.Platform_SignIn(Platform_Type.AOS_GOOGLEPLUS, CB_SignIn);
-#elif UNITY_IOS
-            Platform_Manager.Instance.Platform_SignIn(Platform_Type.IOS_GAMECENTER, CB_SignIn);
-#else
-            Platform_Manager.Instance.Platform_SignIn(Platform_Type.FACEBOOK, CB_SignIn);
-#endif
-        }
-        else
-        {
-            //게임종료
-            Application.Quit();
-        }
-    }
-
-    void CB_SignIn(bool p_isSignIn, Platform_Data p_userdata)
-    {
-        if(p_isSignIn)
-        {
-            Debug.Log(p_userdata.ToString());
-            //PlayerPrefs.SetInt("Platform_Type", (int)p_userdata.Platform_type);
-        }
-        else
-        {
-            i_Select_Platform_Obj.SetActive(true);
-        }
-    }
-
-    public void Platform_Select_Click(int p_Index)
-    {
-        i_Select_Platform_Obj.SetActive(false);
-        Platform_Type select_platform = (Platform_Type)p_Index;
-        Platform_Manager.Instance.Platform_SignIn(select_platform, CB_SignIn);
-    }
-
 
 
 

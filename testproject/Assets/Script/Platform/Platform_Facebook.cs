@@ -25,39 +25,58 @@ public class Platform_Facebook : Base_Platform
     }
     private void OnInit()
     {
-        SPFacebook.OnAuthCompleteAction += OnAuth;
-        SPFacebook.instance.Login("public_profile", "email", "user_friends");
         is_Init = true;
     }
     public override void SignIn(Action<bool, Platform_Data> p_SignIn)
     {
         base.SignIn(p_SignIn);
-        if( !is_Init)
+        this.StartCoroutine(CR_Login());
+    }
+
+    private IEnumerator CR_Login()
+    {
+        if (!is_Init)
         {
             Init();
         }
+
+        while (!is_Init)
+            yield return null;
+
+        if (SPFacebook.instance.IsLoggedIn)
+        {
+            Return_SignIn(SPFacebook.instance.IsLoggedIn);
+        }
         else
         {
+            SPFacebook.OnAuthCompleteAction += OnAuth;
             SPFacebook.instance.Login();
         }
     }
+
     private void OnAuth(FB_Result result)
     {
-        Debug.Log("Facebook SignIn :" + SPFacebook.instance.IsLoggedIn.ToString());
-        Platform_Data user_data = new Platform_Data();
-        if ( SPFacebook.instance.IsLoggedIn)
-        {
-            var FB_data = JsonUtility.FromJson<FB_Data>(result.RawData);
-            user_data.Platform_type = Platform_Type.FACEBOOK;
-            user_data.User_Id = FB_data.user_id;
-            user_data.User_Name = FB_data.access_token;
-        }
-        else
+        SPFacebook.OnAuthCompleteAction -= OnAuth;
+        if ( !SPFacebook.instance.IsLoggedIn)
         {
             Debug.LogError("Connection failed with code: " + result.Error);
         }
-        CB_SignIn(SPFacebook.instance.IsLoggedIn, user_data);
+        Return_SignIn(SPFacebook.instance.IsLoggedIn);
     }
+
+    private void Return_SignIn(bool p_isSignIn)
+    {
+        Debug.Log("Facebook SignIn :" + p_isSignIn.ToString());
+        Platform_Data user_data = new Platform_Data();
+        if (p_isSignIn)
+        {
+            user_data.Platform_type = Platform_Type.FACEBOOK;
+            user_data.User_Id = SPFacebook.instance.UserId;
+            user_data.User_Name = SPFacebook.instance.name;
+        }
+        CB_SignIn(p_isSignIn, user_data);
+    }
+
     public override void SignOut(Action<bool> p_SignOut)
     {
         base.SignOut(p_SignOut);

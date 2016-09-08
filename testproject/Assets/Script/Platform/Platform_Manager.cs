@@ -9,8 +9,9 @@ public class Platform_Manager : Singleton<Platform_Manager>
 
     public void Platform_Init()
     {
-        Dic_Platform.Add(Platform_Type.AOS_GOOGLEPLUS, new Platform_Google());
-        Dic_Platform.Add(Platform_Type.FACEBOOK, new Platform_Facebook());
+        Dic_Platform.Add(Platform_Type.AOS_GOOGLEPLUS, this.gameObject.AddComponent<Platform_Google>());
+        Dic_Platform.Add(Platform_Type.FACEBOOK, this.gameObject.AddComponent<Platform_Facebook>());
+        Dic_Platform.Add(Platform_Type.GUEST, this.gameObject.AddComponent<Platform_Guest>());
 
         foreach (Base_Platform value in Dic_Platform.Values)
         {

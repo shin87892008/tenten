@@ -1,0 +1,134 @@
+ManifestFileVersion: 0
+CRC: 1448139322
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: kr//android//android+kr+(test_dummy)+dummy_mazebarrier.unity3d
+      Dependencies: {}
+    Info_1:
+      Name: kr//android//android+kr+(test_dummy)+dummy_mazefloor.unity3d
+      Dependencies: {}
+    Info_2:
+      Name: kr//android//android+kr+(test_dummy)+materials.unity3d
+      Dependencies: {}
+    Info_3:
+      Name: kr//android//android+kr+(test_dummy).unity3d
+      Dependencies:
+        Dependency_0: kr//android//android+kr+(test_dummy)+materials.unity3d
+    Info_4:
+      Name: kr//android//android+kr+audio+bgm.unity3d
+      Dependencies: {}
+    Info_5:
+      Name: kr//android//android+kr+audio+effect.unity3d
+      Dependencies:
+        Dependency_0: kr//android//android+kr+audio+ui.unity3d
+    Info_6:
+      Name: kr//android//android+kr+audio+signal.unity3d
+      Dependencies: {}
+    Info_7:
+      Name: kr//android//android+kr+audio+ui.unity3d
+      Dependencies: {}
+    Info_8:
+      Name: kr//android//android+kr+bg+battlefinisher.unity3d
+      Dependencies: {}
+    Info_9:
+      Name: kr//android//android+kr+bg+battlegodfinisher.unity3d
+      Dependencies:
+        Dependency_0: kr//android//android+kr+bg+battlefinisher.unity3d
+    Info_10:
+      Name: kr//android//android+kr+bg+battleview.unity3d
+      Dependencies:
+        Dependency_0: kr//android//android+kr+(test_dummy)+dummy_mazefloor.unity3d
+        Dependency_1: kr//android//android+kr+(test_dummy)+materials.unity3d
+        Dependency_2: kr//android//android+kr+(test_dummy).unity3d
+        Dependency_3: kr//android//android+kr+bg+formation.unity3d
+        Dependency_4: kr//android//android+kr+bg+island.unity3d
+        Dependency_5: kr//android//android+kr+bg+ship.unity3d
+    Info_11:
+      Name: kr//android//android+kr+bg+bg.unity3d
+      Dependencies: {}
+    Info_12:
+      Name: kr//android//android+kr+bg+bossbattleview_dummy.unity3d
+      Dependencies:
+        Dependency_0: kr//android//android+kr+audio+effect.unity3d
+        Dependency_1: kr//android//android+kr+bg+battleview.unity3d
+        Dependency_2: kr//android//android+kr+bg+skybox.unity3d
+    Info_13:
+      Name: kr//android//android+kr+bg+buffblock.unity3d
+      Dependencies: {}
+    Info_14:
+      Name: kr//android//android+kr+bg+envcubemap.unity3d
+      Dependencies: {}
+    Info_15:
+      Name: kr//android//android+kr+bg+farmitem.unity3d
+      Dependencies:
+        Dependency_0: kr//android//android+kr+bg+farmitempool.unity3d
+        Dependency_1: kr//android//android+kr+bg+farmitemsprite.unity3d
+    Info_16:
+      Name: kr//android//android+kr+bg+farmitempool.unity3d
+      Dependencies:
+        Dependency_0: kr//android//android+kr+bg+farmitemsprite.unity3d
+    Info_17:
+      Name: kr//android//android+kr+bg+farmitemsprite.unity3d
+      Dependencies: {}
+    Info_18:
+      Name: kr//android//android+kr+bg+farmviewpool.unity3d
+      Dependencies: {}
+    Info_19:
+      Name: kr//android//android+kr+bg+formation.unity3d
+      Dependencies: {}
+    Info_20:
+      Name: kr//android//android+kr+bg+guibgmaterial.unity3d
+      Dependencies:
+        Dependency_0: kr//android//android+kr+bg+battleview.unity3d
+    Info_21:
+      Name: kr//android//android+kr+bg+herodeck.unity3d
+      Dependencies:
+        Dependency_0: kr//android//android+kr+bg+battleview.unity3d
+    Info_22:
+      Name: kr//android//android+kr+bg+ingame.unity3d
+      Dependencies: {}
+    Info_23:
+      Name: kr//android//android+kr+bg+island.unity3d
+      Dependencies: {}
+    Info_24:
+      Name: kr//android//android+kr+bg+loadingview.unity3d
+      Dependencies:
+        Dependency_0: kr//android//android+kr+bg+skybox.unity3d
+    Info_25:
+      Name: kr//android//android+kr+bg+pvp.unity3d
+      Dependencies: {}
+    Info_26:
+      Name: kr//android//android+kr+bg+racingmap.unity3d
+      Dependencies: {}
+    Info_27:
+      Name: kr//android//android+kr+bg+ship.unity3d
+      Dependencies:
+        Dependency_0: kr//android//android+kr+bg+island.unity3d
+    Info_28:
+      Name: kr//android//android+kr+bg+skybox.unity3d
+      Dependencies: {}
+    Info_29:
+      Name: kr//android//android+kr+camera+battlefinishercamera.unity3d
+      Dependencies:
+        Dependency_0: kr//android//android+kr+bg+battlefinisher.unity3d
+    Info_30:
+      Name: kr//android//android+kr+camera+battlefocusattack.unity3d
+      Dependencies: {}
+    Info_31:
+      Name: kr//android//android+kr+camera+battlegodfinishercamera.unity3d
+      Dependencies:
+        Dependency_0: kr//android//android+kr+bg+battlefinisher.unity3d
+    Info_32:
+      Name: kr//android//android+kr+camera+battleviewcamera.unity3d
+      Dependencies: {}
+    Info_33:
+      Name: kr//android//android+kr+camera+herodetailviewcamera.unity3d
+      Dependencies: {}
+    Info_34:
+      Name: kr//android//android+kr+camera+quartermapcamera.unity3d
+      Dependencies: {}
+    Info_35:
+      Name: kr//android//android+kr+camera+racingmapcamera.unity3d
+      Dependencies:
+        Dependency_0: kr//android//android+kr+bg+skybox.unity3d

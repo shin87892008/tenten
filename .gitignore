@@ -1,0 +1,9 @@
+//폴더생략
+testproject/[Tt]emp/
+testproject/[Ll]ibrary/
+
+#파일 생략
+*.db
+*.bin
+*.csproj
+*.suo

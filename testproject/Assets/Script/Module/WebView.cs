@@ -9,7 +9,7 @@ public class WebView : MonoBehaviour
     public GameObject m_screen_panel;
     public void Close_WebView()
     {
-        if(webViewObject != null)
+        if (webViewObject != null)
         {
             webViewObject.SetVisibility(false);
         }
@@ -17,6 +17,9 @@ public class WebView : MonoBehaviour
 
     public void Open_WebView(string web_path)
     {
+#if UNITY_EDITOR
+        return;
+#endif
         if (null == webViewObject)
         {
             webViewObject = (new GameObject("WebViewObject")).AddComponent<WebViewObject>();
@@ -57,9 +60,9 @@ public class WebView : MonoBehaviour
             webViewObject.LoadURL(web_path);
             //위에서 계산한 offset을 적용시킨다(각 위치에 위에서 구한 비율만큼 나눠준다)
             //패널의 이동값이 있을경우 더해준다.
-            webViewObject.SetMargins((int)(result.x / aspect) + (int)(in_position.x / aspect), 
-                (int)(result.y / aspect) - (int)(in_position.y / aspect), 
-                (int)(result.width / aspect) - (int)(in_position.x / aspect), 
+            webViewObject.SetMargins((int)(result.x / aspect) + (int)(in_position.x / aspect),
+                (int)(result.y / aspect) - (int)(in_position.y / aspect),
+                (int)(result.width / aspect) - (int)(in_position.x / aspect),
                 (int)(result.height / aspect) + (int)(in_position.y / aspect));
             webViewObject.SetVisibility(true);
         }

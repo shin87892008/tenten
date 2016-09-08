@@ -25,7 +25,7 @@ namespace Facebook.Unity.Editor.Dialogs
     internal class EmptyMockDialog : EditorFacebookMockDialog
     {
         public string EmptyDialogTitle { get; set; }
-
+        int a = 10;
         protected override string DialogTitle
         {
             get
